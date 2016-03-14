@@ -1,4 +1,4 @@
-package sketch01;
+package sketch01;//つり目
 
 import java.io.BufferedReader;
 import java.io.IOException;
