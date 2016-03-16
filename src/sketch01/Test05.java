@@ -12,31 +12,32 @@ public class Test05 {
 
 	public static void main(String[] args) throws Exception {
 		// 自分の得意な言語で
-		// Let's チャレンジ！！
+		// Let's
 		try {
-
-			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-			String one_1 = br.readLine();
-			int i = Integer.parseInt(one_1);
-			String one_2 = one_1;//多分いらない
 			
+			// 入力
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			String one = br.readLine();
+			int i = Integer.parseInt(one);
+
 			// インスタンスゾーン
-			ArrayList<Integer> i_list = new ArrayList<Integer>();
-			BigInteger b1, b2;// = new BigInteger("");
+			BigInteger b1, b2, b3;
+			b1 = new BigInteger(one);
+			b2 = new BigInteger(one);
+			b3 = new BigInteger("1");
 
-			for (int n = i; n > 0; n--) {
-				i_list.add(n);
-				System.out.println(i_list.size());// デバッグ用
-			}
-			b1 = new BigInteger(one_1);
-			b2 = new BigInteger(one_1);
+			// 初期設定
+			b2 = b2.subtract(b3);// b2-1の処理
 
-			for (int count = 0; count < i; count++) {
-
-				b1.multiply(b2);
-
+			// 階乗ループ
+			for (int count = 1; count < i - 1; count++) {
+				b1 = b1.multiply(b2);// 階乗
+				b2 = b2.subtract(b3);// b2-1の処理
 			}
 
+			System.out.println(b1);// デバッグ用
+
+			// 例外処理
 		} catch (NullPointerException e_1) {
 			System.out.println("NullPointerException");
 		} catch (NumberFormatException e_2) {
