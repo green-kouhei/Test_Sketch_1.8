@@ -16,21 +16,30 @@ public class Test05 {
 		try {
 
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-			String one = br.readLine();
-			int i = Integer.parseInt(one);
-
+			String one_1 = br.readLine();
+			int i = Integer.parseInt(one_1);
+			String one_2 = one_1;//多分いらない
+			
 			// インスタンスゾーン
 			ArrayList<Integer> i_list = new ArrayList<Integer>();
-			BigInteger bi = new BigInteger("a");
+			BigInteger b1, b2;// = new BigInteger("");
 
 			for (int n = i; n > 0; n--) {
 				i_list.add(n);
 				System.out.println(i_list.size());// デバッグ用
 			}
-		} catch (NullPointerException e_1) {
+			b1 = new BigInteger(one_1);
+			b2 = new BigInteger(one_1);
 
-		}
-		catch(NumberFormatException e_2){
+			for (int count = 0; count < i; count++) {
+
+				b1.multiply(b2);
+
+			}
+
+		} catch (NullPointerException e_1) {
+			System.out.println("NullPointerException");
+		} catch (NumberFormatException e_2) {
 			System.out.println("長さが0バイトです");
 		}
 
